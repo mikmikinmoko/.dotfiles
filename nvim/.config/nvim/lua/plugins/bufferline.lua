@@ -1,0 +1,314 @@
+return {
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    opts = {
+      options = {
+        offsets = {
+          {
+            filetype = "neo-tree",
+            text = "File Explorer",
+            highlight = "Directory",
+            separator = true, -- optional
+          },
+        },
+      },
+    },
+  },
+}
+-- return {
+--   {
+--     "akinsho/bufferline.nvim",
+--     version = "*",
+--     dependencies = "nvim-tree/nvim-web-devicons",
+--     opts = {
+--       options = {
+--         mode = "buffers", -- set to "tabs" to only show tabpages instead
+--         style_preset = "default", -- or "minimal" for less clutter
+--         themable = true,
+--         numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both" | function
+--         close_command = "bdelete! %d",
+--         right_mouse_command = "bdelete! %d",
+--         left_mouse_command = "buffer %d",
+--         middle_mouse_command = nil,
+--         indicator = {
+--           icon = "▎", -- this should be omitted if indicator style is not 'icon'
+--           style = "icon", -- 'icon' | 'underline' | 'none'
+--         },
+--         buffer_close_icon = "󰅖",
+--         modified_icon = "●",
+--         close_icon = "",
+--         left_trunc_marker = "",
+--         right_trunc_marker = "",
+--         max_name_length = 30,
+--         max_prefix_length = 30,
+--         truncate_names = true,
+--         tab_size = 21,
+--         diagnostics = "nvim_lsp", -- false | "nvim_lsp" | "coc"
+--         diagnostics_update_in_insert = false,
+--         diagnostics_indicator = function(count, level, diagnostics_dict, context)
+--           local icon = level:match("error") and " " or " "
+--           return " " .. icon .. count
+--         end,
+--         custom_filter = function(buf_number, buf_numbers)
+--           -- filter out filetypes you don't want to see
+--           local filetype = vim.bo[buf_number].filetype
+--           if filetype == "qf" or filetype == "fugitive" or filetype == "git" then
+--             return false
+--           end
+--           return true
+--         end,
+--         offsets = {
+--           {
+--             filetype = "neo-tree",
+--             text = "󰉋 File Explorer",
+--             text_align = "left",
+--             separator = true,
+--             highlight = "Directory",
+--           },
+--           {
+--             filetype = "undotree",
+--             text = "󰕍 Undo Tree",
+--             text_align = "center",
+--           },
+--           {
+--             filetype = "packer",
+--             text = "󰏖 Plugin Manager",
+--             text_align = "center",
+--           },
+--         },
+--         color_icons = true,
+--         show_buffer_icons = true,
+--         show_buffer_close_icons = true,
+--         show_close_icon = true,
+--         show_tab_indicators = true,
+--         show_duplicate_prefix = true,
+--         persist_buffer_sort = true,
+--         separator_style = "slant", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' }
+--         enforce_regular_tabs = false,
+--         always_show_bufferline = true,
+--         hover = {
+--           enabled = true,
+--           delay = 200,
+--           reveal = { "close" },
+--         },
+--         sort_by = "insert_after_current", -- 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
+--         move_wraps_at_ends = false,
+--       },
+--       highlights = {
+--         background = {
+--           bg = "none",
+--           fg = "#6272a4", -- Inactive buffer text color
+--         },
+--         buffer_visible = {
+--           bg = "none",
+--           fg = "#a0a0a0", -- Visible but not active buffer
+--         },
+--         buffer_selected = {
+--           bg = "none",
+--           fg = "#ffffff", -- Active buffer text (white)
+--           bold = true,
+--           italic = false,
+--         },
+--         tab = {
+--           bg = "none",
+--           fg = "#6272a4",
+--         },
+--         tab_selected = {
+--           bg = "none",
+--           fg = "#ffffff",
+--           bold = true,
+--         },
+--         tab_close = {
+--           bg = "none",
+--           fg = "#ff5555", -- Close button color (red)
+--         },
+--         close_button = {
+--           bg = "none",
+--           fg = "#6272a4",
+--         },
+--         close_button_visible = {
+--           bg = "none",
+--           fg = "#a0a0a0",
+--         },
+--         close_button_selected = {
+--           bg = "none",
+--           fg = "#ff5555", -- Active close button (red)
+--         },
+--         fill = {
+--           bg = "none",
+--         },
+--         separator = {
+--           bg = "none",
+--           fg = "#44475a", -- Separator color
+--         },
+--         separator_visible = {
+--           bg = "none",
+--           fg = "#44475a",
+--         },
+--         separator_selected = {
+--           bg = "none",
+--           fg = "#bd93f9", -- Active separator (purple)
+--         },
+--         indicator_selected = {
+--           bg = "none",
+--           fg = "#50fa7b", -- Active indicator (green)
+--         },
+--         indicator_visible = {
+--           bg = "none",
+--           fg = "#f1fa8c", -- Visible indicator (yellow)
+--         },
+--         modified = {
+--           bg = "none",
+--           fg = "#f1fa8c", -- Modified indicator (yellow)
+--         },
+--         modified_visible = {
+--           bg = "none",
+--           fg = "#f1fa8c",
+--         },
+--         modified_selected = {
+--           bg = "none",
+--           fg = "#50fa7b", -- Active modified indicator (green)
+--         },
+--         duplicate_selected = {
+--           bg = "none",
+--           fg = "#ffffff",
+--           bold = true,
+--         },
+--         duplicate_visible = {
+--           bg = "none",
+--           fg = "#a0a0a0",
+--         },
+--         duplicate = {
+--           bg = "none",
+--           fg = "#6272a4",
+--         },
+--         -- Diagnostics colors
+--         error = {
+--           bg = "none",
+--           fg = "#ff5555", -- Error color (red)
+--         },
+--         error_selected = {
+--           bg = "none",
+--           fg = "#ff5555",
+--           bold = true,
+--         },
+--         error_visible = {
+--           bg = "none",
+--           fg = "#ff5555",
+--         },
+--         warning = {
+--           bg = "none",
+--           fg = "#f1fa8c", -- Warning color (yellow)
+--         },
+--         warning_selected = {
+--           bg = "none",
+--           fg = "#f1fa8c",
+--           bold = true,
+--         },
+--         warning_visible = {
+--           bg = "none",
+--           fg = "#f1fa8c",
+--         },
+--         info = {
+--           bg = "none",
+--           fg = "#8be9fd", -- Info color (cyan)
+--         },
+--         info_selected = {
+--           bg = "none",
+--           fg = "#8be9fd",
+--           bold = true,
+--         },
+--         info_visible = {
+--           bg = "none",
+--           fg = "#8be9fd",
+--         },
+--         hint = {
+--           bg = "none",
+--           fg = "#bd93f9", -- Hint color (purple)
+--         },
+--         hint_selected = {
+--           bg = "none",
+--           fg = "#bd93f9",
+--           bold = true,
+--         },
+--         hint_visible = {
+--           bg = "none",
+--           fg = "#bd93f9",
+--         },
+--       },
+--     },
+--     config = function(_, opts)
+--       require("bufferline").setup(opts)
+--
+--       -- Additional highlight overrides to ensure transparency
+--       vim.defer_fn(function()
+--         local groups = {
+--           "BufferLineBackground",
+--           "BufferLineFill",
+--           "BufferLineTab",
+--           "BufferLineTabSelected",
+--           "BufferLineTabClose",
+--           "BufferLineBuffer",
+--           "BufferLineBufferVisible",
+--           "BufferLineBufferSelected",
+--           "BufferLineSeparator",
+--           "BufferLineSeparatorVisible",
+--           "BufferLineSeparatorSelected",
+--           "BufferLineIndicatorSelected",
+--           "BufferLineIndicatorVisible",
+--           "BufferLineCloseButton",
+--           "BufferLineCloseButtonVisible",
+--           "BufferLineCloseButtonSelected",
+--           "BufferLineModified",
+--           "BufferLineModifiedVisible",
+--           "BufferLineModifiedSelected",
+--           "BufferLineDuplicate",
+--           "BufferLineDuplicateSelected",
+--           "BufferLineDuplicateVisible",
+--           "BufferLineError",
+--           "BufferLineErrorSelected",
+--           "BufferLineErrorVisible",
+--           "BufferLineWarning",
+--           "BufferLineWarningSelected",
+--           "BufferLineWarningVisible",
+--           "BufferLineInfo",
+--           "BufferLineInfoSelected",
+--           "BufferLineInfoVisible",
+--           "BufferLineHint",
+--           "BufferLineHintSelected",
+--           "BufferLineHintVisible",
+--         }
+--
+--         for _, group in ipairs(groups) do
+--           vim.api.nvim_set_hl(0, group, { bg = "none" })
+--         end
+--       end, 100)
+--
+--       -- Custom keymaps for buffer navigation
+--       local map = vim.keymap.set
+--       local opts_keymap = { noremap = true, silent = true }
+--
+--       -- Navigate buffers
+--       -- map("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts_keymap)
+--       -- map("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts_keymap)
+--
+--       -- Move buffers
+--       map("n", "<leader>bl", "<Cmd>BufferLineMoveNext<CR>", opts_keymap)
+--       map("n", "<leader>bh", "<Cmd>BufferLineMovePrev<CR>", opts_keymap)
+--
+--       -- Close buffers
+--       map("n", "<leader>bc", "<Cmd>BufferLinePickClose<CR>", opts_keymap)
+--       map("n", "<leader>bC", "<Cmd>BufferLineCloseOthers<CR>", opts_keymap)
+--
+--       -- Pick buffer
+--       map("n", "<leader>bp", "<Cmd>BufferLinePick<CR>", opts_keymap)
+--
+--       -- Go to buffer by position
+--       for i = 1, 9 do
+--         map("n", "<leader>" .. i, "<Cmd>BufferLineGoToBuffer " .. i .. "<CR>", opts_keymap)
+--       end
+--     end,
+--   },
+-- }
